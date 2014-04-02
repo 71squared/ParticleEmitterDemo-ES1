@@ -137,15 +137,12 @@
                 // Update the angle of the particle from the sourcePosition and the radius.  This is only
 				// done of the particles are rotating
 				currentParticle->angle += currentParticle->degreesPerSecond * aDelta;
-				currentParticle->radius -= currentParticle->radiusDelta;
+				currentParticle->radius += currentParticle->radiusDelta * aDelta;
                 
 				Vector2f tmp;
 				tmp.x = sourcePosition.x - cosf(currentParticle->angle) * currentParticle->radius;
 				tmp.y = sourcePosition.y - sinf(currentParticle->angle) * currentParticle->radius;
 				currentParticle->position = tmp;
-
-				if (currentParticle->radius < minRadius)
-					currentParticle->timeToLive = 0;
 			} else {
 				Vector2f tmp, radial, tangential;
                 
@@ -181,7 +178,7 @@
 			currentParticle->color.alpha += currentParticle->deltaColor.alpha;
 			
 			// Update the particle size
-			currentParticle->particleSize += currentParticle->particleSizeDelta;
+			currentParticle->particleSize += currentParticle->particleSizeDelta * aDelta;
 
             // Update the rotation of the particle
             currentParticle->rotation += (currentParticle->rotationDelta * aDelta);
@@ -347,9 +344,12 @@
 	// multiplying that by the speed
 	particle->direction = Vector2fMultiply(vector, vectorSpeed);
 	
+    float startRadius = maxRadius + maxRadiusVariance * RANDOM_MINUS_1_TO_1();
+    float endRadius = minRadius + minRadiusVariance * RANDOM_MINUS_1_TO_1();
+    
 	// Set the default diameter of the particle from the source position
-	particle->radius = maxRadius + maxRadiusVariance * RANDOM_MINUS_1_TO_1();
-	particle->radiusDelta = (maxRadius / particleLifespan) * (1.0 / MAXIMUM_UPDATE_RATE);
+	particle->radius = startRadius;
+	particle->radiusDelta = (endRadius - startRadius) / particle->timeToLive;
 	particle->angle = DEGREES_TO_RADIANS(angle + angleVariance * RANDOM_MINUS_1_TO_1());
 	particle->degreesPerSecond = DEGREES_TO_RADIANS(rotatePerSecond + rotatePerSecondVariance * RANDOM_MINUS_1_TO_1());
     
@@ -362,7 +362,7 @@
 	// Calculate the particle size using the start and finish particle sizes
 	GLfloat particleStartSize = startParticleSize + startParticleSizeVariance * RANDOM_MINUS_1_TO_1();
 	GLfloat particleFinishSize = finishParticleSize + finishParticleSizeVariance * RANDOM_MINUS_1_TO_1();
-	particle->particleSizeDelta = ((particleFinishSize - particleStartSize) / particle->timeToLive) * (1.0 / MAXIMUM_UPDATE_RATE);
+	particle->particleSizeDelta = ((particleFinishSize - particleStartSize) / particle->timeToLive);
 	particle->particleSize = MAX(0, particleStartSize);
 	
 	// Calculate the color the particle should have when it starts its life.  All the elements
@@ -459,6 +459,7 @@
 	maxRadiusVariance = [aConfig floatValueFromChildElementNamed:@"maxRadiusVariance" parentElement:rootXMLElement];
 	radiusSpeed = [aConfig floatValueFromChildElementNamed:@"radiusSpeed" parentElement:rootXMLElement];
 	minRadius = [aConfig floatValueFromChildElementNamed:@"minRadius" parentElement:rootXMLElement];
+	minRadiusVariance = [aConfig floatValueFromChildElementNamed:@"minRadiusVariance" parentElement:rootXMLElement];
 	rotatePerSecond = [aConfig floatValueFromChildElementNamed:@"rotatePerSecond" parentElement:rootXMLElement];
 	rotatePerSecondVariance = [aConfig floatValueFromChildElementNamed:@"rotatePerSecondVariance" parentElement:rootXMLElement];
     

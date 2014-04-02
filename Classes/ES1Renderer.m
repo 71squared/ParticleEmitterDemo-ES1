@@ -52,6 +52,9 @@
         ////////////////////////
         // Create a particle emitter instance.
         pe = [[ParticleEmitter alloc] initParticleEmitterWithFile:@"Blue Flame.pex"];
+//        pe = [[ParticleEmitter alloc] initParticleEmitterWithFile:@"Comet.pex"];
+//        pe = [[ParticleEmitter alloc] initParticleEmitterWithFile:@"Giros Gratis.pex"];
+//        pe = [[ParticleEmitter alloc] initParticleEmitterWithFile:@"Crazy Blue.pex"];
     }
 
     return self;

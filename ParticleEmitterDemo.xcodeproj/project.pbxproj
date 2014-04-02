@@ -19,6 +19,7 @@
 		8253B0EF189D64D3004DC2EF /* Blue Flame.pex in Resources */ = {isa = PBXBuildFile; fileRef = 8253B0EC189D64D3004DC2EF /* Blue Flame.pex */; };
 		8253B0F0189D64D3004DC2EF /* Comet.pex in Resources */ = {isa = PBXBuildFile; fileRef = 8253B0ED189D64D3004DC2EF /* Comet.pex */; };
 		8253B0F1189D64D3004DC2EF /* Crazy Blue.pex in Resources */ = {isa = PBXBuildFile; fileRef = 8253B0EE189D64D3004DC2EF /* Crazy Blue.pex */; };
+		82FD427218EC6EAA0070BCF7 /* Giros Gratis.pex in Resources */ = {isa = PBXBuildFile; fileRef = 82FD427118EC6EAA0070BCF7 /* Giros Gratis.pex */; };
 		8F10C28E119AF66400CE561D /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F10C28D119AF66400CE561D /* Texture2D.m */; };
 		8F10C291119AF68400CE561D /* ParticleEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F10C290119AF68400CE561D /* ParticleEmitter.m */; };
 		8F10C299119AF6A500CE561D /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F10C294119AF6A500CE561D /* NSDataAdditions.m */; };
@@ -48,6 +49,7 @@
 		8253B0EC189D64D3004DC2EF /* Blue Flame.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Blue Flame.pex"; sourceTree = "<group>"; };
 		8253B0ED189D64D3004DC2EF /* Comet.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Comet.pex; sourceTree = "<group>"; };
 		8253B0EE189D64D3004DC2EF /* Crazy Blue.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Crazy Blue.pex"; sourceTree = "<group>"; };
+		82FD427118EC6EAA0070BCF7 /* Giros Gratis.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Giros Gratis.pex"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ParticleEmitterDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParticleEmitterDemo-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		8F10C28C119AF66300CE561D /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
 		8F10C28D119AF66400CE561D /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		8F10C317119B045800CE561D /* Particle Emitter Config */ = {
 			isa = PBXGroup;
 			children = (
+				82FD427118EC6EAA0070BCF7 /* Giros Gratis.pex */,
 				8253B0EC189D64D3004DC2EF /* Blue Flame.pex */,
 				8253B0ED189D64D3004DC2EF /* Comet.pex */,
 				8253B0EE189D64D3004DC2EF /* Crazy Blue.pex */,
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				82FD427218EC6EAA0070BCF7 /* Giros Gratis.pex in Resources */,
 				8F10C31B119B046200CE561D /* emitter.pex in Resources */,
 				8253B0F1189D64D3004DC2EF /* Crazy Blue.pex in Resources */,
 				8253B0F0189D64D3004DC2EF /* Comet.pex in Resources */,
